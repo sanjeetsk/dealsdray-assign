@@ -1,8 +1,9 @@
-import express from "express";
+import express from 'express';
 import path from 'path';
 import ejsLayouts from 'express-ejs-layouts';
 import session from "express-session";
-import UserController from "./src/controller/user.controller";
+import UserController from "./src/controller/user.controller.js";
+import { auth } from './src/middleware/auth.middleware.js';
 
 const server = express();
 
@@ -27,7 +28,7 @@ const userController = new UserController();
 
 // 
 
-server.get('/', (req, res) => {
+server.get('/', auth, (req, res) => {
     res.render('landingPage');
 })
 server.get('/register', userController.getRegister);
