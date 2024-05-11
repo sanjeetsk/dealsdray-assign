@@ -19,9 +19,13 @@ server.use(session({
 
 server.use(ejsLayouts);
 
+server.use(express.static('public'));
+
 //setup view engine setting
 server.set('view engine', 'ejs');
 server.set('views', path.join(path.resolve(), 'src', 'views'));
+
+server.use(ejsLayouts);
 
 //create an instance of UserController
 const userController = new UserController();
@@ -39,7 +43,7 @@ server.post('/login', userController.postLogin);
 server.get('/logout', userController.logout);
 
 
-server.use(express.static('./src/views'))
+server.use(express.static('./src/view'))
 server.use(express.static('public'));
 
 server.listen(3100,()=>{
