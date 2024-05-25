@@ -23,22 +23,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item dropdown">
-                        <ul class="dropdown-menu">
-                            <% if(locals.userEmail){ %>
-                                <li class="dropdown-item">
-                                    <a class="dropdown-item" href="/logout">LogOut</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/new"></a></li>
-                            <% }else{ %>
-                                <li><a class="dropdown-item" href="/register">Register</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="/login">Login</a></li>
-                            <% } %>
-                        </ul>
+                    <li class="nav-item active">
+                            
                     </li>
                 </ul>
             </div>

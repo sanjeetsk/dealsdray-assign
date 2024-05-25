@@ -13,7 +13,7 @@ export default class UserModel{
     }
 
     static isValidUser(email, password){
-        const result = user.find((u) => u.email == email && u.password == password)
+        const result = users.find((u) => u.email == email && u.password == password)
         console.log("result", result);
         return result;
     }
